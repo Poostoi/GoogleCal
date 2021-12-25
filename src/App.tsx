@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ConnectCalApp } from './ConnectCalApi'
+import React, { useEffect, useState } from 'react';
+import { AddEvent } from './AddEvent';
+declare global { interface Window { gapi: any; } };
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export const App = () => {
+	const gapi = window.gapi;
+
+	const CLIENT_ID = "27694278166-iu0inkqgjkd180sohl6s1j2k3lsathqn.apps.googleusercontent.com";
+	const API_KEY = "AIzaSyCO2Ejs1wopEcIVvWgsvtUR3j7t813iSSo"
+	const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"]
+	const SCOPES = "https://www.googleapis.com/auth/calendar.events"
+
+	useEffect(() => {
+		gapi.load('client:auth2', () => {
+			console.log('loaded client')
+
+			gapi.client.init({
+				apiKey: API_KEY,
+				clientId: CLIENT_ID,
+				discoveryDocs: DISCOVERY_DOCS,
+				scope: SCOPES,
+			})
+			gapi.client.load('calendar', 'v3', () => console.log('bam!'))
+		});
+	});
+
+
+
+	return (
+		<div >
+			<ConnectCalApp />
+			<AddEvent gapi={gapi} />
+		</div>
+	);
 }
 
-export default App;
+
