@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+
 declare global { interface Window { gapi: any; } };
 
 
@@ -14,8 +14,8 @@ export const ConnectCalApp = () => {
 
 	return (
 		<>
-			<button style={{ width: 100, height: 50 }} onClick={authSignIn}>Sign In</button>
-			<button style={{ width: 100, height: 50 }} onClick={authSignOut}>Sign Out</button>
+			<button type="button" className="btn btn-warning w-25 text-light" onClick={authSignIn}>Sign In</button>
+			<button type="button" className="btn btn-warning w-25 text-light" onClick={authSignOut}>Sign Out</button>
 		</>
 	)
 
