@@ -8,15 +8,131 @@ body {
 
 }
 
+h1,p, h6	 {
+	margin: 0;
+}
+p > span {	
+	padding-left: 0.5em;	
+}
+p.radio {
+	
+	margin-left: 0.5em;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+tr {
+	border-bottom: #F9ED69 solid;
+	border-top: #F9ED69 solid;
+	height: 20px;
+
+}
+td.col-1 {
+	border-right: #F9ED69 solid;
+	text-align: center;
+}
+td {
+	padding: 10px;	
+	height: 40px;
+}
+table {
+	width: 100%;
+	
+}
+div.col-12 {
+	display: flex;
+	justify-content: center;	
+}
+div.w-100.row {
+	padding: 1em;
+}
+.rootElement {
+	height: 100vh;
+}
 .header {
 	display: flex;
 	width: 100%;
-	justify-content: space-around;
-	background-color: rgb(131, 164, 190);
-	margin-bottom: 1em;
+	justify-content: center;
+	flex-wrap: nowrap;	
+	background-color: #F9ED69;	
 	padding: 1em 0;
+}
+.func-area {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	flex-wrap: nowrap;	
+	background-color: #F08A5D;	
+	padding: 2em 3em;
+}
+.container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.radio > span {
+	font-size: small;	
+}
+.calendar-area {
+	display: flex;
+	width: 100%;
+	min-height: 60vh;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;	
+	background-color: #B83B5E;	
+	padding: 1em 0;
+	
+}
+.lower {
+	display: flex;
+	width: 100%;
+	flex-wrap: nowrap;	
+	background-color: #6A2C60;	
+	padding: 1em 0;
+}
+.btn-add {
+  background-size: cover;
+	background-color: rgb(32, 32, 32);	
+	width: 11vh;
+	height: 10vh;
+	border-radius: 1vh;	
+	border: none;
+	margin-right: 10px;
+	text-align: center;
+	vertical-align: middle;
+	color: #F08A5D;
+	font-size: 250%;
+}
+.btn-add:active {
+	border: solid rgb(88, 87, 87);
+}
+
+.size {
+	width: 1.5em;
+	height: 1.5em;
+}
+
+.week td {
+	border-right: solid #F9ED69 ;
+	border-left: solid #F9ED69 ;
+	color: #fae715;
+	width: 12%;
+	text-align: center;
+}
+.week td.col-1 {
+	border-right:none;
+	border-left:none;
+	color: #0a0901;
+}
+
+.month td {
+	border-right: solid #F9ED69 ;
+	border-left: solid #F9ED69 ;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 2em;
+	height: 4em;
 }
