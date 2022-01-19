@@ -12,7 +12,7 @@ const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v
 const SCOPES = "https://www.googleapis.com/auth/calendar.events"
 
 export const App = () => {
-	const [unitTime, SetUnitTime] = useState('');
+	const [unitTime, SetUnitTime] = useState('day');
 	const [currentMonth, SetCurrentMonth] = useState(new Date().getMonth());
 	const [currentYear, SetCurrentYear] = useState(new Date().getFullYear());
 	const [currentDay, SetCurrentDay] = useState(new Date().getDate());
@@ -20,7 +20,6 @@ export const App = () => {
 	useEffect(() => {
 		gapi.load('client:auth2', () => {
 			console.log('loaded client')
-
 			gapi.client.init({
 				apiKey: API_KEY,
 				clientId: CLIENT_ID,
@@ -59,8 +58,8 @@ export const App = () => {
 				</section>
 				<section className='func-area'>
 					<AddEvent gapi={gapi}
-						change={changeFormatTime} 
-						format={unitTime}/>
+						change={changeFormatTime}
+						format={unitTime} />
 					<SetTime day={currentDay}
 						month={currentMonth}
 						year={currentYear}
