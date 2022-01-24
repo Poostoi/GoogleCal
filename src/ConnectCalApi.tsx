@@ -1,7 +1,3 @@
-
-declare global { interface Window { gapi: any; } };
-
-
 export const ConnectCalApp = () => {
 	const gapi = window.gapi;
 	const authSignIn = () => {

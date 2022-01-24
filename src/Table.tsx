@@ -4,10 +4,12 @@ import { Month } from "./Month";
 
 interface IProps {
 	formatTime: string;
-	month: number;
-	year: number;
+	monthYear: string;
+	/*evants: [
+
+	]*/
 }
-export const Table = ({ month, year, formatTime }: IProps) => {
+export const Table = ({ monthYear, formatTime }: IProps) => {
 
 	return (
 		<div className="col-12 ">
@@ -16,10 +18,9 @@ export const Table = ({ month, year, formatTime }: IProps) => {
 					<Day /> :
 					formatTime === 'Week' ?
 						<Week /> :
-						formatTime === 'Month' ? <Month month={month}
-							year={year} /> : <></>
+						formatTime === 'Month' ?
+							<Month monthYear={monthYear} /> : <></>
 			}
-
 		</div>
 	);
 }
