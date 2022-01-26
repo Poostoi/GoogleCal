@@ -1,4 +1,7 @@
-export const Week = () => {
+interface IProps {
+	events: any;
+}
+export const Week = ({ events }: IProps) => {
 	return (
 		<table className="week">
 			<tbody>

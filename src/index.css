@@ -40,6 +40,10 @@ table {
 	width: 100%;
 	
 }
+.dayEvent {
+	text-align: center;
+	color:rgb(255, 255, 255);
+}
 div.col-12 {
 	display: flex;
 	justify-content: center;	
@@ -135,4 +139,7 @@ div.w-100.row {
 	vertical-align: middle;
 	font-size: 2em;
 	height: 4em;
+}
+.eventClassName {
+	background: rgb(95, 95, 248);
 }

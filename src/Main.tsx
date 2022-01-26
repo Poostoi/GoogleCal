@@ -27,7 +27,7 @@ export const Main = () => {
 					<SetTime handler={upValue} />
 				</section>
 				<section className='calendar-area '>
-					<Table formatTime={formatTime} monthYear={monthYear} />
+					<Table events={events} formatTime={formatTime} monthYear={monthYear} />
 				</section>
 			</main>
 		</>

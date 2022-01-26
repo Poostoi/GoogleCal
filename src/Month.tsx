@@ -1,30 +1,13 @@
-
+import { LastDay } from './LastDay';
 
 interface IProps {
 	monthYear: string;
 }
-const lastDay = (date: string) => {
-	let year = '', month = '';
 
-	for (let i: number = 0; i < date.length; i++) {
-		if (i < 4) {
-			year += date[i];
-		} else if (i > 4) {
-			month += date[i];
-		}
-	}
-	if (Number(month) === 2) {
-		return Number(year) % 4 === 0 ? 29 : 28;
-	} else if (Number(month) < 8) {
-		return Number(month) % 2 === 0 ? 30 : 31;
-	} else {
-		return Number(month) % 2 === 0 ? 31 : 30;
-	}
-};
 export const Month = ({ monthYear }: IProps) => {
 	const numberDay = (date: string) => {
 		let arr: number[] = [];
-		for (let i: number = 29; i <= lastDay(date); i++) {
+		for (let i: number = 29; i <= LastDay(date); i++) {
 			arr.push(i);
 		}
 		return arr.map((el) =>
